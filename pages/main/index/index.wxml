@@ -1,0 +1,131 @@
+<!-- 首页 -->
+
+<cu-custom bgColor="bg-peoprers">
+	<view slot="content">錄入</view>
+</cu-custom>
+<view class="box">
+	<image class="image1" src="/image/1.png"></image>
+	<view class="image2">
+		<!-- <image src="/image/2.png"></image> -->
+		詞彙錄入
+	</view>
+	<!-- <view class="titles">
+		广东省 梅州市 丰顺县 客家语
+		<text bindtap="showModal" data-target="RadioModal" class="cuIcon-post lg text-gray"></text>
+	</view> -->
+	<form catchsubmit="formSubmit">
+
+		<view class="topBox">
+			<view class="box1">
+				<view class="top">方言地區(必填):</view>
+				<view class="bottom">
+					<picker class="pick" mode="region" bindchange="bindRegionChange" value="{{region}}">
+						<view class="picker">
+							{{region[0]}}，{{region[1]}}，{{region[2]}}
+						</view>
+					</picker>
+				</view>
+			</view>
+			<view class="box1">
+				<view class="top">方言類別(必填):</view>
+				<view class="bottom">
+					<picker class="pick" mode="selector" bindtap="{{toLogin == true ? '' : 'CLogin'}}" bindchange="PickerChange1" value="{{index}}" range="{{picker1}}" range-key="{{'name'}}">
+						<view class="picker">
+							{{category1name ? category1name : '请选择方言類別' }}
+						</view>
+					</picker>
+				</view>
+			</view>
+			<view class="box1">
+				<view class="top">詞匯分類(必填):</view>
+				<view class="bottom">
+					<picker class="pick" mode="selector" bindtap="{{toLogin == true ? '' : 'CLogin'}}" bindchange="PickerChange2" value="{{index}}" range="{{picker2}}" range-key="{{'name'}}">
+						<view class="picker">
+							{{category2name ? category2name : '请选择詞匯分類' }}
+						</view>
+					</picker>
+				</view>
+			</view>
+			<view class="box1">
+				<view class="top">普通話(必填):</view>
+				<view class="bottom">
+					<input bindinput="getputong" placeholder="例如，挑起" placeholder-style="color: #555555;" name="title"></input>
+				</view>
+			</view>
+			<block wx:key="index" wx:for="{{box}}">
+				<view class="box1">
+					<view class="top">普通話同義詞{{index + 1}}:</view>
+					<view class="bottom">
+						<input placeholder="列如，用肩挑" placeholder-style="color: #555555;" name="Synonym,{{index}}"></input>
+						<text bindtap="splicSynonym" wx:if="{{index + 1 == box.length && index != 0}}"
+							data-index="{{index}}">刪除</text>
+					</view>
+				</view>
+			</block>
+			<view class="buttonBox">
+				<button bindtap="addSynonym" class="button">添加普通話同義詞</button>
+			</view>
+		</view>
+
+
+		<block wx:key="index" wx:for="{{box1}}">
+			<view class="topBox">
+				<view class="box1">
+					<view class="top">方言(必填):</view>
+					<view class="bottom">
+						<input bindblur="srFangyan" data-index="{{index}}" placeholder-style="color: #555555;" name="dialect,{{index}}" placeholder="列如，挑起"></input>
+					</view>
+				</view>
+				<view class="box1">
+					<view class="top">方言拼音(必填):</view>
+					<view class="bottom">
+						<input bindblur="srPingying" placeholder-style="color: #555555;" data-index="{{index}}" data-index="{{index}}" name="pingying,{{index}}" placeholder="列如，用肩挑"></input>
+					</view>
+				</view>
+				<view class="box1">
+					<view class="top">
+						<view class="left">
+							錄入方言(長按錄入):</view>
+						<!-- <view class="right" data-index="{{index}}" bindtap="addDuying">
+							+添加方言读音</view> -->
+							<image class="right" data-index="{{index}}" bindtap="addDuying" src="/image/icons/addluyin.png"></image>
+					</view>
+					<block wx:key="index" wx:for="{{item.item3}}" wx:for-item="items" wx:for-index="indexs">
+						<view style="height:148rpx" class="bottom">
+							<view class="left">
+								<image bindlongtap="touchStart" data-index="{{index}}" data-indexs="{{indexs}}" bindtouchend="touchEnd" src="{{changImg == true ? '/image/sd.gif' : '/image/3.png'}}"></image>
+							</view>
+							<view class="right">
+								<image bindtap="playVoice" data-index="{{index}}" data-indexs="{{indexs}}" wx:if="{{items.voice && !items.bftype}}" data-recording="{{items.voice}}" src="/image/4.png"></image>
+								<image wx:if="{{items.voice && items.bftype}}" src="/image/4s.gif"></image>
+							</view>
+							<text bindtap="splicDuying" data-index="{{index}}" data-indexs="{{indexs}}"
+								wx:if="{{indexs + 1 == item.item3.length}}">删除</text>
+							<input style="display:none" name="duying,{{index}},{{indexs}}" value="{{items.voice}}" placeholder="列如，用肩挑"></input>
+						</view>
+					</block>
+				</view>
+				<text bindtap="splicDialect" wx:if="{{index + 1 == box1.length && index != 0}}" data-index="{{index}}">删除</text>
+			</view>
+		</block>
+		<view class="buttonBox">
+			<view bindtap="addDialect" class="button">添加方言同義詞</view>
+		</view>
+
+		<view class="bottomTitles">
+			<view class="bottomTitle">備注:</view>
+				<view style="margin-top: 5rpx;border-radius: 10rpx;" class="topBox">
+					<editor name="remarks" placeholder-style="color: #555555;" maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="簡介故事内容"></editor>
+			</view>
+		</view>
+
+
+		<view class="padding-lg flex flex-direction">
+			<button formType="submit" class="cu-btn bg-yellowe lg">錄入</button>
+		</view>
+
+	</form>
+	<view class="cheng"></view>
+</view>
+
+<image wx:if="{{lodGif == true}}" class="gif" mode="scaleToFill" src="/image/5.gif"></image>

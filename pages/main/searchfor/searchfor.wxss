@@ -1,0 +1,132 @@
+/* pages/searchfor/searchfor.wxss */
+
+/* 搜索头部 */
+.header {
+  width: 100%;
+  background: #f9f9f9;
+  padding: 50rpx 0px;
+}
+
+.head {
+  width: 100%;
+  text-align: center;
+  /* margin: 50rpx; */
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.head-box {
+  width: 85%;
+  background-color: white;
+  margin: 20rpx auto;
+  border-radius: 30rpx;
+  border: 6rpx solid #e6e6e6;
+}
+
+.head-box>.top {
+  height: 80rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26rpx 45rpx 26rpx 75rpx;
+  color: #4e4e4e;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.head-box>.top>view{
+  display: flex;
+  align-items: center;
+}
+.head-box>.top>image {
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  top: 20rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.head-box>.act {
+  width: 90%;
+  height: 6rpx;
+  background-color: #dadada;
+  margin: auto;
+}
+
+.head-box>.bottom {
+  width: 87%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26rpx 35rpx;
+}
+
+.head-box>.bottom>input {
+  width: 90%;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+
+/* 历史浏览 */
+.record {
+  width: 85%;
+  margin: auto;
+  padding-top: 3%;
+}
+
+.record>.b-title {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.record>.b-body {
+  width: 100%;
+  padding-top: 5%;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.record>.b-body>.b-box {
+  padding: 14rpx 40rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  background-color: rgb(224, 224, 224);
+}
+
+
+/* 词汇列表 */
+.vocabulary {
+  width: 100%;
+  margin: 35rpx auto;
+}
+
+.vocabulary>.title {
+  width: 100%;
+  text-align: center;
+  /* margin: 50rpx; */
+  margin-top: 50rpx;
+  margin-bottom: 20rpx;
+  font-size: 42rpx;
+  font-weight: bold;
+}
+
+.vocabulary>.title>image {
+  width: 340rpx;
+  height: 45rpx;
+}
+
+
+.cheng {
+  width: 100%;
+  height: 75rpx;
+}

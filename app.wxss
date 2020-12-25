@@ -1,0 +1,133 @@
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+
+
+
+.bor {
+  border: 1rpx solid;
+}
+
+page {
+  font-family: "fanyi";
+}
+
+/* 词汇组件 */
+.bodybox {
+  width: 90%;
+  margin: 35rpx auto;
+  border-radius: 20rpx;
+  background: #ffffff;
+  color: #6e6e6e;
+  font-size: 30rpx;
+  padding: 30rpx 50rpx;
+  position: relative;
+  border: 6rpx solid #e6e6e6;
+}
+
+.copy{
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  z-index: 10;
+}
+
+.bodybox>.box-1 {
+  word-break: break-all;
+}
+
+.bodybox>.box-2 {
+  padding: 20rpx 0;
+  position: relative;
+}
+
+.bodybox>.box-2>.m-box-2 {
+  position: absolute;
+  right: -50rpx;
+  top: 20rpx;
+  border-radius: 20px 0px 0px 20px;
+  background: #7c9ad8;
+  color: white;
+  font-size: 22rpx;
+  padding: 8rpx 10rpx 8rpx 20rpx;
+}
+
+.bodybox>.act {
+  width: 90%;
+  height: 6rpx;
+  background-color: gainsboro;
+  position: absolute;
+  left: 33rpx;
+}
+
+.bodybox>.box-3 {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20rpx;
+}
+
+.bodybox>.box-3>view {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+}
+
+.bodybox>.box-3>view>.box3-name {
+  /* width: 130rpx; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bodybox>.box-3>view>.box3-mand {
+  width: 350rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bodybox>.box-3>view>.box3-name-s {
+  width: 130rpx;
+  word-break: break-all;
+}
+
+.bodybox>.box-3>view>.box3-mand-s {
+  width: 350rpx;
+  word-break: break-all;
+}
+
+.bodybox>.box-3>view>image {
+  width: 30rpx;
+  height: 25rpx;
+}
+
+
+
+/* 备注 */
+.remarks {
+  width: 89%;
+  margin: -50rpx auto 30rpx auto;
+  border-radius: 0 0 20rpx 20rpx;
+  font-size: 22rpx;
+  padding: 40rpx 30rpx 30rpx 30rpx;
+  color: #A7A7A7;
+  line-height: 40rpx;
+  background-color: #e6e6e6;
+  display: flex;
+  justify-content: start;
+}
+
+.remarks>view {
+  color: #627496;
+}
+
+
+.zhanwu {
+  text-align: center;
+  font-size: 36rpx;
+  color: gray;
+  line-height: 60rpx;
+  margin-top: 20rpx;
+}
+

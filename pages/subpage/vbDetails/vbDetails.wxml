@@ -1,0 +1,60 @@
+<cu-custom bgColor="bg-peoprers" isBack="{{true}}">
+	<view slot="content">詞匯詳情</view>
+</cu-custom>
+
+<!-- 词汇组件 -->
+<view class="bodybox">
+	<image bindtap="copyText" class="copy" data-text="{{listData.dialect_com_name}}" src="/image/icons/copy.png"></image>
+	<view class="box-1">
+		[{{listData.dialect_com_pinyin}}]
+				<!-- <block wx:for="{{10}}" wx:key="index">123123</block> -->
+	</view>
+	<view class="box-2">
+		<view style="width:70%;word-break: break-all;"> 
+		{{listData.dialect_com_name}}
+		<!-- <block wx:for="{{10}}" wx:key="index">123123</block> -->
+		</view>
+		<view wx:if="{{listData.voice}}" class="m-box-2">共有{{listData.voice.length}}個發音</view>
+		<view wx:if="{{!listData.voice}}" class="m-box-2">共有0個發音</view>
+	</view>
+	<view class="act"></view>
+	<view class="box-3">
+		<view>
+			<view class="box3-name-s">{{listData.name}}</view>
+			<view class="box3-mand-s"> <block wx:for="{{listData.mandarin_synonym}}" wx:key="index"> {{item.name}} / </block>
+			</view>
+		</view>
+		<view bindtap="getcollection" data-id="{{listData.id}}">
+			<image wx:if="{{listData.is_show == 0}}" src="/image/icons/collection.png"></image>
+			<image wx:if="{{listData.is_show == 1}}" src="/image/icons/collection1.png"></image>
+		</view>
+	</view>
+</view>
+<!-- 词汇组件结束 -->
+
+
+<!-- 录音用户 -->
+<view class="vbUser">
+	<view class="title">錄音用戶</view>
+	<view class="body">
+
+		<block wx:if="{{listData.voice}}" wx:for="{{listData.voice}}" wx:key="index">
+			<view class="bodyBox">
+				<view>
+					<image mode="scaleToFill" src="{{item.avatar_image}}"></image>
+				</view>
+				<view class="box">
+					<view style="padding-left: 10rpx;">{{item.nickname}} {{item.province}} {{item.city}} {{item.area}}</view>
+					<view>
+						<image bindtap="playVoice" data-voice="{{item.voice}}" data-indexs="{{index}}" mode="scaleToFill" src="{{indexs == index ? '/image/4s.gif' : '/image/4.png'}}"></image>
+					</view>
+				</view>
+			</view>
+			<view class="dx"></view>
+		</block>
+
+		<view class="zhanwu" wx:if="{{!listData.voice}}">暫無用戶錄音</view>
+
+	</view>
+</view>
+<!-- 录音用户结束 -->

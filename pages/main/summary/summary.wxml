@@ -1,0 +1,43 @@
+<cu-custom bgColor="bg-peoprers">
+	<view slot="content">匯總</view>
+</cu-custom>
+
+<view class="box">
+
+	<!-- 页面标题 -->
+	<view class="title">
+		<view>資料匯總</view>
+		<view class="but" bindtap="goindex">
+			<view>錄入</view>
+			<image style="width:20rpx;height:20rpx" src="/image/icons/entering.png"></image>
+		</view>
+	</view>
+	<!-- 页面标题结束 -->
+
+
+	<!-- 语言列表 -->
+	<view class="body">
+
+		<block wx:for="{{listdata}}" wx:key="index" wx:for-index="childindex">
+			<view class="topTitle">{{item.name}}</view>
+			<scroll-view scroll-x="true" style="height:300rpx;padding-right: 20rpx;">
+				<view class="bodyBox">
+					<view class="m-bodyBox" wx:for="{{item.words}}" wx:key="index" data-wordsID="{{item.id}}" data-wordsname="{{item.name}}" data-id="{{listdata[childindex].id}}" data-name="{{listdata[childindex].name}}" bindtap="goSummaryDet">
+						<view class="top">{{item.name}}</view>
+						<view class="bottom">
+							<image wx:if="{{!item.image}}" src="/image/icons/language.png"></image>
+							<image wx:if="{{item.image}}" src="{{item.image}}"></image>
+						</view>
+					</view>
+				</view>
+			</scroll-view>
+		</block>
+
+
+	</view>
+	<!-- 语言列表结束 -->
+
+	
+	<view class="cheng"></view>
+
+</view>

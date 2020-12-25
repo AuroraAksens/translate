@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "index": "/pages/main/index/index",
+    "mine": "/pages/main/mine/mine",
+    "summary": "/pages/main/summary/summary",
+    "searchfor": "/pages/main/searchfor/searchfor"
+  },
+  "enablePullDownRefresh": false
+}

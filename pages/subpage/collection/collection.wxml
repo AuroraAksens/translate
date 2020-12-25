@@ -1,0 +1,12 @@
+<cu-custom bgColor="bg-peoprers" isBack="{{true}}">
+	<view slot="content">我的收藏</view>
+</cu-custom>
+
+<!-- 收藏列表 -->
+<view class="collection">
+  <view class="coll-box" wx:for="{{listdata}}" wx:key="index" data-id="{{item.id}}" bindtap="goCoDet">
+    <view class="box">{{item.name}}</view>
+    <!-- <view class="box2"> </view> -->
+  </view>
+</view>
+<!-- 收藏列表结束 -->

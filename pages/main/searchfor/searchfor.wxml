@@ -1,0 +1,97 @@
+<!-- 搜索头部 -->
+<cu-custom bgColor="bg-peoprers">
+	<view slot="content">檢索</view>
+</cu-custom>
+
+
+<!-- 词汇列表 -->
+<scroll-view scroll-y="true" style="height: calc(100vh - 120px)">
+	<view class="header">
+		<!-- <view class="head" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;}}">搜索</view> -->
+		<view class="head-box">
+			<view class="top">
+				<!-- <image style="width:30rpx;height:30rpx;margin-left: 10rpx" src="/image/icons/qiehuan.png"></image>  -->
+				<!-- bindtap="showTips2" -->
+				<view >{{srfy2 == 0 ? '普通話' : '同義詞'}} </view>
+				<!-- <image src="/image/icons/search.png"></image> -->
+				<view bindtap="showTips">{{srfyname != '' ? srfyname : Dialect[0].name}}</view>
+			</view>
+			<view class="act"></view>
+			<view class="bottom">
+				<input bindinput="getsearchtext" bindblur="getSearchData" type="text" placeholder="{{search_text != '' ? search_text : '請輸入'}}"></input>
+				<view bindtap="getSearchData">
+					<image style="width:35rpx;height:35rpx" src="/image/icons/search2.png"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 搜索头部结束 -->
+
+
+
+	<view class="vocabulary" wx:if="{{search_text != ''}}">
+		<view style="padding-left:0" class="title">
+			詞匯
+		</view>
+		<block wx:for="{{searchData}}" wx:key="index" wx:if="{{searchData.length != 0}}">
+
+			<!-- 词汇组件 -->
+			<view class="bodybox">
+			<image bindtap="copyText" class="copy" data-text="{{item.dialect_com_name}}" src="/image/icons/copy.png"></image>
+				<view class="box-1" data-id="{{item.id}}" bindtap="govbDetails">
+					[{{item.dialect_com_pinyin}}]
+					<!-- <block wx:for="{{10}}" wx:key="index">123123</block> -->
+				</view>
+				<view class="box-2" data-id="{{item.id}}" bindtap="govbDetails">
+					<view style="width:70%;word-break: break-all;">
+					{{item.dialect_com_name}}
+					<!-- <block wx:for="{{10}}" wx:key="index">123123</block> -->
+					</view>
+					<view class="m-box-2">共有{{item.voice_count}}個發音</view>
+				</view>
+				<view class="act"></view>
+				<view class="box-3">
+					<view>
+						<view class="box3-name">{{item.name}} </view>
+						<view class="box3-mand"> <block wx:for="{{item.mandarin_synonym}}" wx:key="index"> / {{item.name}} </block>
+						</view>
+					</view>
+					<!-- <view bindtap="getcollection" data-id="{{item.id}}" data-index="{{index}}">
+						<image wx:if="{{item.is_show == 0}}" src="/image/icons/collection.png"></image>
+						<image wx:if="{{item.is_show == 1}}" src="/image/icons/collection1.png"></image>
+					</view> -->
+				</view>
+			</view>
+			<!-- 词汇组件结束 -->
+
+			<view class="remarks">
+				<view>備注：</view>
+				<rich-text nodes="{{item.remarks}}"></rich-text>
+			</view>
+
+		</block>
+
+		<view class="zhanwu" wx:if="{{searchData.length == 0}}">暫無數據</view>
+	</view>
+
+
+	<!-- 历史浏览 -->
+	<view class="record" wx:else>
+		<view class="b-title">
+			歷史瀏覽
+		</view>
+		<view class="b-body">
+			<view class="b-box" wx:if="{{history.length != 0}}" wx:for="{{history}}" wx:key="index" data-name="{{item.record}}" bindtap="getSearchData2">
+				{{item.record}}
+			</view>
+			<view class="zhanwu" wx:if="{{history.length == 0}}">暫無數據</view>
+		</view>
+	</view>
+	<!-- 历史浏览结束 -->
+
+
+
+	<view class="cheng"></view>
+
+</scroll-view>
+<!-- 词汇列表结束 -->

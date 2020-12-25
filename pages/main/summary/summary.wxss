@@ -1,0 +1,79 @@
+.box {
+  height: calc(100vh - 220rpx);
+  background-color: #f9f9f9;
+  overflow: scroll;
+}
+
+
+/* 页面标题 */
+.title{
+  width: 100%;
+  padding-left: 5%;
+  font-size: 46rpx;
+  /* color: white; */
+  margin: 45rpx auto;
+}
+.title>.but{
+  width: 180rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50rpx;
+  background-color: #7c9ad8;
+  color: white;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+}
+.title>.but>view{
+  margin-right: 10rpx;
+}
+
+
+/* 语言列表 */
+.body{
+  width: 100%;
+  padding-left: 5%;
+  margin-top: 100rpx;
+}
+.topTitle{
+  margin-top: 60rpx;
+  font-size: 46rpx;
+  /* color: white; */
+}
+
+.bodyBox{
+  display: flex;
+  flex-wrap: nowrap;
+}
+.m-bodyBox{
+  height: 250rpx;
+  border-radius: 15rpx;
+  background-color: #fff;
+  /* color: white; */
+  padding: 3% 22%;
+  margin-top: 30rpx;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+  position: relative;
+  border: 6rpx solid #e6e6e6;
+}
+.m-bodyBox>.top{
+  width: 100%;
+  /* color: white; */
+  position: absolute;
+  top: 20rpx;
+  left: 30rpx;
+}
+.m-bodyBox>.bottom>image{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  bottom: 20rpx;
+  right: 30rpx;
+}
+
+.cheng {
+  width: 100%;
+  height: 75rpx;
+}

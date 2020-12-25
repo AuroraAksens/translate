@@ -1,0 +1,54 @@
+<cu-custom bgColor="bg-peoprers" isBack="{{true}}">
+	<view slot="content">匯總詳情</view>
+</cu-custom>
+
+
+<!-- 汇总列表 -->
+<view class="vocabulary">
+	<view class="title">
+		{{name}}{{wordsname}}詞匯
+	</view>
+	<block wx:for="{{listData}}" wx:key="index" wx:if="{{listData.length != 0}}">
+
+		<!-- 词汇组件 -->
+		<view class="bodybox">
+			<image bindtap="copyText" class="copy" data-text="{{item.dialect_com_name}}" src="/image/icons/copy.png"></image>
+			<view class="box-1" data-id="{{item.id}}" bindtap="govbDetails">
+				[{{item.dialect_com_pinyin}}]
+				<!-- <block wx:for="{{10}}" wx:key="index">123123</block> -->
+			</view>
+			<view class="box-2" data-id="{{item.id}}" bindtap="govbDetails">
+				<view style="width:70%;word-break: break-all;">
+					{{item.dialect_com_name}}
+					<!-- <block wx:for="{{10}}" wx:key="index">123123</block> -->
+				</view>
+				<view class="m-box-2">共有{{item.voice_count}}個發音</view>
+			</view>
+			<view class="act"></view>
+			<view class="box-3">
+				<view>
+					<view class="box3-name">{{item.name}}</view>
+					<view class="box3-mand"><block wx:for="{{item.mandarin_synonym}}" wx:key="index"> {{item.name}} /</block>
+					</view>
+				</view>
+				<view bindtap="getcollection" data-id="{{item.id}}" data-index="{{index}}">
+					<image wx:if="{{item.is_show == 0}}" src="/image/icons/collection.png"></image>
+					<image wx:if="{{item.is_show == 1}}" src="/image/icons/collection1.png"></image>
+				</view>
+			</view>
+		</view>
+		<!-- 词汇组件结束 -->
+
+		<view class="remarks">
+			<view>備注：</view>
+			<rich-text nodes="{{item.remarks}}"></rich-text>
+		</view>
+
+	</block>
+
+	<view class="zhanwu" wx:if="{{listData.length == 0}}">暫無數據</view>
+</view>
+<!-- 汇总列表 -->
+
+
+<view class="cheng"></view>

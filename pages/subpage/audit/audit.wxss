@@ -1,0 +1,136 @@
+/* pages/subpage/audit/audit.wxss */
+
+/* 顶部导航栏 */
+.topHead {
+  width: 90%;
+  height: 90rpx;
+  margin: 20rpx auto;
+  border-radius: 100rpx;
+  border: 6rpx solid #e6e6e6;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headBox {
+  width: 255rpx;
+  height: 100%;
+  border-radius: 100rpx;
+  text-align: center;
+  line-height: 75rpx;
+  font-weight: bold;
+}
+
+.headBoxs {
+  width: 255rpx;
+  height: 100%;
+  border-radius: 100rpx;
+  line-height: 75rpx;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  background: #7c9ad8;
+}
+
+/* 审核选项卡 */
+.audlit {
+  width: 90%;
+  margin: 60rpx auto;
+}
+
+.a-box {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  border-radius: 20rpx;
+  background-color: #ffffff;
+  border: 6rpx solid gainsboro;
+  margin-bottom: 20rpx;
+}
+
+.a-box>.top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 40rpx;
+  font-size: 26rpx;
+  border-bottom: 6rpx solid gainsboro;
+}
+
+.a-box>.top>.top-box {
+  border-radius: 50rpx;
+  background-color: #7c9ad8;
+  color: white;
+  text-align: center;
+  padding: 5rpx 30rpx;
+}
+
+.a-box>.body {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  padding: 40rpx 40rpx;
+  border-bottom: 6rpx solid gainsboro;
+}
+
+.a-box>.body>.a-body {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 16rpx;
+}
+
+.a-box>.body>.a-body>.left {
+  width: 15%;
+}
+
+.a-box>.body>.a-body>.left>image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.a-box>.body>.a-body>.right>view {
+  margin-left: 30rpx;
+}
+
+.a-box>.body>.a-body>.right>.right-box {
+  white-space: pre-wrap;
+  line-height: 60rpx;
+  display: flex;
+  justify-content: start;
+}
+
+.a-box>.body>.a-body>.right>.right-box>view {
+  margin-right: 30rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.a-box>.body>.a-body>.right>image {
+  width: 144rpx;
+  height: 144rpx;
+  margin-top: -20rpx;
+}
+
+.a-box>.bottom {
+  width: 100%;
+}
+
+.a-box>.bottom>.botBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 40rpx;
+  font-size: 30rpx;
+  color: #46291F;
+}

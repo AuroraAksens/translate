@@ -1,0 +1,37 @@
+<cu-custom bgColor="bg-peoprers" isBack="{{true}}">
+	<view slot="content">我的收藏</view>
+</cu-custom>
+
+<!-- 词汇组件 -->
+<block wx:for="{{listdata}}" wx:key="index" wx:if="{{listdata.length != 0}}">
+
+	<!-- 词汇组件 -->
+	<view class="bodybox">
+		<image bindtap="copyText" class="copy" data-text="{{item.dialect_com_name}}" src="/image/icons/copy.png"></image>
+		<view class="box-1" data-id="{{item.id}}" bindtap="govbDetails">
+			[{{item.dialect_com_pinyin}}]
+		</view>
+		<view class="box-2" data-id="{{item.id}}" bindtap="govbDetails">
+			<view>{{item.dialect_com_name}}</view>
+			<view class="m-box-2">共有{{item.voice_count}}個發音</view>
+		</view>
+		<view class="act"></view>
+		<view class="box-3">
+			<view>{{item.name}} {{item.mandarin_synonym[0].name}}</view>
+			<view bindtap="getcollection" data-id="{{item.id}}" data-index="{{index}}">
+				<image wx:if="{{item.is_show == 0}}" src="/image/icons/collection.png"></image>
+				<image wx:if="{{item.is_show == 1}}" src="/image/icons/collection1.png"></image>
+			</view>
+		</view>
+	</view>
+	<!-- 词汇组件结束 -->
+
+	<view class="remarks">
+		<view>備注：</view>
+		<rich-text nodes="{{item.remarks}}"></rich-text>
+	</view>
+
+</block>
+
+<view class="zhanwu" wx:if="{{listdata.length == 0}}">暫無收藏</view>
+<!-- 词汇组件结束 -->

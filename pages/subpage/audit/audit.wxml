@@ -1,0 +1,67 @@
+<cu-custom bgColor="bg-peoprers" isBack="{{true}}">
+	<view slot="content">審核中心</view>
+</cu-custom>
+
+<!-- 顶部导航栏 -->
+<view class="topHead">
+	<view class="{{topId == 0 ? 'headBoxs' : 'headBox'}}" data-id="0" bindtap="tapTab">審核中</view>
+	<view class="{{topId == 1 ? 'headBoxs' : 'headBox'}}" data-id="1" bindtap="tapTab">審核成功</view>
+	<view class="{{topId == 2 ? 'headBoxs' : 'headBox'}}" data-id="2" bindtap="tapTab">審核失敗</view>
+</view>
+<!-- 顶部导航栏结束 -->
+
+
+<!-- 审核选项卡 -->
+<view class="audlit">
+	<view class="a-box" wx:for="{{listdata}}" wx:key="index" wx:for-index="indexid" wx:if="{{listdata.length != 0}}">
+		<view class="top">
+			<view>{{item.province}} {{item.city}} {{item.area}} {{item.dialect}}</view>
+			<view wx:if="{{topId == 0}}" class="top-box">審核中</view>
+			<view wx:if="{{topId == 1}}" class="top-box">審核成功</view>
+			<view wx:if="{{topId == 2}}" class="top-box">審核失敗</view>
+		</view>
+		<view class="body">
+
+			<view class="a-body" wx:for-item="items" wx:for="{{item.dialect_com}}" wx:key="index">
+				<view class="left">
+					<image src="{{userinfo.avatarUrl}}"></image>
+				</view>
+
+				<block wx:if="{{items.voice.length == 0}}">
+					<view class="right">
+						<view style="margin-bottom:10rpx">{{userinfo.nickName}} <i style="margin-left:20rpx"></i>方言{{index+1}}
+						</view>
+						<view class="right-box">
+							<view>{{item.name}}</view>
+						</view>
+					</view>
+				</block>
+
+
+				<block wx:if="{{items.voice.length != 0}}">
+					<view class="right" wx:for="{{items.voice}}" wx:key="index">
+						<view>{{userinfo.nickName}} <i style="margin-left:20rpx"></i>方言{{index+1}}</view>
+						<image bindtap="playVoice" data-voice="{{item.voice}}" data-indexid="{{indexid}}" data-indexs="{{index}}"
+							mode="scaleToFill" src="{{indexs == index && indexid == indexids ? '/image/4s.gif' : '/image/4.png'}}">
+						</image>
+					</view>
+				</block>
+
+			</view>
+
+		</view>
+		<view class="bottom">
+			<view class="botBox">
+				<view>申請時間</view>
+				<view>{{item.create_time}}</view>
+			</view>
+			<view class="botBox" wx:if="{{topId == 2}}">
+				<view>失敗原因</view>
+				<view>{{item.reasons}}</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="zhanwu" wx:if="{{listdata.length == 0}}">暫無數據</view>
+</view>
+<!-- 审核选项卡结束 -->

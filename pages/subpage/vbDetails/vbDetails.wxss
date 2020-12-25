@@ -1,0 +1,69 @@
+/* pages/subpage/vbDetails/vbDetails.wxss */
+
+/* 录音用户 */
+.vbUser {
+  width: 90%;
+  margin: 40rpx auto;
+  border-radius: 20rpx;
+  /* box-shadow: 0px 3px 6px rgba(159, 157, 157, 0.16); */
+  background-color: #ffffff;
+  padding: 20rpx 40rpx;
+  border: 6rpx solid gainsboro;
+}
+
+.vbUser>.title {
+  width: 100%;
+  font-size: 32rpx;
+  color: gray;
+  font-weight: bold;
+}
+
+.vbUser>.body {
+  width: 100%;
+}
+
+.vbUser>.body>.bodyBox {
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.vbUser>.body>.bodyBox>view {
+  width: 20%
+}
+
+.vbUser>.body>.bodyBox>view>image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.vbUser>.body>.bodyBox>.box {
+  width: 80%;
+  padding-left: 10rpx;
+  color: #627496;
+  font-size: 24rpx;
+}
+
+.vbUser>.body>.bodyBox>.box>view>image {
+  width: 144rpx;
+  height: 144rpx;
+  margin-top: -20rpx;
+}
+
+.dx {
+  width: 675rpx;
+  height: 1rpx;
+  background-color: rgb(184, 184, 184);
+  margin: 20rpx auto auto -40rpx;
+
+}
+
+.zhanwu{
+  width: 100%;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: gray;
+}

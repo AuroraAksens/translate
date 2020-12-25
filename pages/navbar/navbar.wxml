@@ -1,0 +1,121 @@
+<swiper style="height: {{height}};" circular="true" current="{{current}}" duration="500" bindchange="cardSwiper">
+	<swiper-item wx:key>
+		<index id="index" bind:showModals="showModal" bind:hideModals="hideModal" bind:checkLogins="checkLogin"></index>
+	</swiper-item>
+	<swiper-item wx:key>
+		<searchfor id="searchfor" bind:showTipss="showTips"  bind:showTipss2="showTips2"></searchfor>
+	</swiper-item>
+	<swiper-item wx:key>
+		<summary id="summary" bind:goindexs="goindex"></summary>
+	</swiper-item>
+	<swiper-item wx:key>
+		<!-- 给子组件传值，也就是mine页面，传我这个zdy的跳转页面的方法 -->
+		<mine id="mine" bind:mineJumps="mineJump"></mine>
+	</swiper-item>
+
+
+</swiper>
+
+<view style="height:100rpx">
+	<view class="cu-bar tabbar shadow foot" style="background-color: #f9f9f9;">
+		<view class="action" bindtap="NavChange" data-cur="0">
+			<view class='cuIcon-cu-image'>
+				<image mode="widthFix" src=" /image/TabIcon/{{current=='0'?'index1':'index'}}.png"></image>
+			</view>
+			<!-- <view class="{{current=='0'?'text-pink':'text-gray'}}">首页</view> -->
+		</view>
+		<view class="action" bindtap="NavChange" data-cur="1">
+			<view class='cuIcon-cu-image'>
+				<image mode="widthFix" src=" /image/TabIcon/{{current=='1'?'search1':'search'}}.png"></image>
+			</view>
+			<!-- <view class="{{current=='1'?'text-pink':'text-gray'}}">搜索</view> -->
+		</view> 
+		<view class="action" bindtap="NavChange" data-cur="2">
+			<view class='cuIcon-cu-image'>
+				<image mode="widthFix" src=" /image/TabIcon/{{current=='2'?'summary1':'summary'}}.png"></image>
+			</view>
+			<!-- <view class="{{current=='2'?'text-pink':'text-gray'}}">汇总</view> -->
+		</view>
+		<view class="action" bindtap="NavChange" data-cur="3">
+			<view class='cuIcon-cu-image'>
+				<image mode="widthFix" src="/image/TabIcon/{{current=='3'?'my1':'my'}}.png"></image>
+			</view>
+			<!-- <view class="{{current=='3'?'text-pink':'text-gray'}}">我的</view> -->
+		</view>
+	</view>
+</view>
+
+<!-- <view class="cu-modal {{modalName=='RadioModal'?'show':''}}">
+	<view class="cu-dialog">
+		<view style="padding: 5%;">
+			<form>
+				<view class="titles">选择你说的方言地区</view>
+				<view class="cu-form-group">
+					<view style="color:rgba(98, 116, 150, 1)" class="title">方言地区</view>
+					<picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+						<view style="color:rgba(214, 212, 216, 1)" class="picker">
+							{{region[0]}}，{{region[1]}}，{{region[2]}}
+						</view>
+					</picker>
+				</view>
+				<view class="cu-form-group">
+					<view style="color:rgba(98, 116, 150, 1)" class="title">方言类别</view>
+					<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+						<view style="color:rgba(214, 212, 216, 1)" class="picker">
+							{{index?picker[index]:'请选择方言类别'}}
+						</view>
+					</picker>
+				</view>
+				<view class="cu-form-group">
+					<view style="color:rgba(98, 116, 150, 1)" class="title">词汇分类</view>
+					<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+						<view style="color:rgba(214, 212, 216, 1)" class="picker">
+							{{index?picker[index]:'请选择词汇分类'}}
+						</view>
+					</picker>
+				</view>
+				<view style="background-color: #fff;" class="padding flex flex-direction">
+					<button class="cu-btn bg-grey lg">保存</button>
+				</view>
+			</form>
+		</view>
+	</view>
+</view> -->
+
+
+<!-- 选择语言弹框 -->
+<view class="explainTips" wx:if="{{showTips == true}}">
+	<view class="tipsBox">
+		<view class="head">選擇語言</view>
+		<view style="padding:0" class="body">
+			<view wx:for="{{Dialect}}" wx:key="index" class="{{showNum == index ? 'actboxs' : 'actbox'}}" data-id="{{index}}" data-itemid="{{item.id}}" data-itemname="{{item.name}}" bindtap="actioc">
+			 {{item.name}}
+			 <image wx:if="{{showNum == index}}" class="actimg" src="/image/icons/acrive.png"></image>
+			</view>
+		</view>
+		<view class="but" bindtap="showTips">
+			確認
+		</view>
+	</view>
+</view>
+<!-- 选择语言弹框结束 -->
+
+
+<!-- 切换语言弹框 -->
+<view class="explainTips" wx:if="{{showTips2 == true}}">
+	<view class="tipsBox">
+		<image src="/image/icons/showTips.png"></image>
+		<view class="head">選擇語言</view>
+		<view class="body">
+			<view wx:for="{{Dialect2}}" wx:key="index" class="{{showNum == index ? 'actboxs' : 'actbox'}}" data-id="{{index}}"  bindtap="actioc2">
+			 {{item.name}}
+			 <image wx:if="{{showNum == index}}" class="actimg" src="/image/icons/acrive.png"></image>
+			</view>
+		</view>
+		<view class="but" bindtap="showTips2">
+			確認
+		</view>
+	</view>
+</view>
+<!-- 切换语言弹框结束 -->
+

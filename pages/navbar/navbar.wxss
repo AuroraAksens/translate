@@ -1,0 +1,163 @@
+/* pages/owner/navbar/navbar.wxss */
+/*  */
+.cu-modal>.cu-dialog>.img {
+  width: 623rpx;
+  height: 878rpx;
+}
+
+.cu-modal>.cu-dialog>.modalbox {
+  position: absolute;
+  top: 330rpx;
+  width: 623rpx;
+  height: 470rpx;
+  left: 30rpx;
+}
+
+.cu-modal>.cu-dialog>.modalbox>.top>button>image {
+  width: 520rpx;
+  height: 126rpx;
+}
+
+.cu-modal>.cu-dialog>.modalbox>.top>button {
+  width: 520rpx;
+  height: 126rpx;
+}
+
+.cu-modal>.cu-dialog>.modalbox>.mid>button>image {
+  width: 520rpx;
+  height: 126rpx;
+}
+
+.cu-modal>.cu-dialog>.modalbox>.mid>button {
+  width: 520rpx;
+  height: 126rpx;
+  margin-top: 30rpx;
+}
+
+.cu-modal>.cu-dialog>.modalbox>.bottom>button>image {
+  width: 520rpx;
+  height: 90rpx;
+}
+
+.cu-modal>.cu-dialog>.modalbox>.bottom>button {
+  width: 554rpx;
+  height: 138rpx;
+  margin-top: 25rpx;
+}
+
+
+/* 去除button */
+button::after {
+  border: none;
+}
+
+button {
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  line-height: inherit;
+}
+
+.button-hover {
+  /*点击后样式*/
+  background-color: transparent;
+}
+
+/* .cu-dialog */
+.cu-dialog>.box .titles {
+  text-align: center;
+  padding: 5%;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #707070;
+  background-color: #fff;
+}
+
+
+
+
+
+/* 选择语言弹框样式 */
+.explainTips {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(29, 29, 29, 0.7);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.explainTips>.tipsBox {
+  width: 80%;
+  background-color: white;
+  border-radius: 30rpx;
+  position: relative;
+}
+
+.explainTips>.tipsBox>image {
+  width: 80%;
+  height: 10rpx;
+  position: absolute;
+  top: 37rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.explainTips>.tipsBox>.head {
+  width: 100%;
+  height: 80rpx;
+  font-size: 28rpx;
+  color: #030303;
+  font-weight: bold;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.explainTips>.tipsBox>.body {
+  width: 80%;
+  font-size: 26rpx;
+  margin: 0 auto 40rpx auto;
+  color: #646464;
+  line-height: 50rpx;
+}
+
+.explainTips>.tipsBox>.body>.actbox {
+  text-align: center;
+  border-bottom: 1rpx solid gainsboro;
+  line-height: 70rpx;
+  position: relative;
+}
+
+.explainTips>.tipsBox>.body>.actboxs {
+  text-align: center;
+  border-bottom: 1rpx solid #7c9ad8;
+  line-height: 70rpx;
+  position: relative;
+  color: #7c9ad8;
+}
+
+.actimg {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 10rpx;
+  top: 20rpx;
+}
+
+.explainTips>.tipsBox>.but{
+  width: 120rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background-color: #7c9ad8;
+  text-align: center;
+  line-height: 60rpx;
+  color: white;
+  margin: 20rpx auto;
+}
+
+
+
